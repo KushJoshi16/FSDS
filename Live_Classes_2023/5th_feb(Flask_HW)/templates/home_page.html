@@ -1,0 +1,40 @@
+<html>
+    <body onload="get_walaF()">
+        <form action="/bill" method="POST">
+        <select name="item" id="item" onchange={myFunction(event)}>
+            <option value="none" selected></option>
+            <option value="item1">item1</option>
+            <option value="item2">item2</option>
+            <option value="item3">item3</option>
+            <option value="item4">item4</option>
+        </select>
+    <input type="text" name="num1" id="num1">
+        <!-- <input type="text" name="num2" id="num2"> -->
+        <input type="submit" name="Calculate" id="Calculate" value="Calculate">
+        <!-- <button onclick={get_walaF()}>efa</button> -->
+    </form>
+    <script>
+        const proxy={{proxy_be}};
+        // const myval = {itemval};
+        //         const obj = {
+        //     "item1": 203,
+        //     "item2": 20,
+        //     "item3": 860,
+        //     "item4": 203,
+        // }
+        // const obj = {{itemval}};
+        // console.log(document.getElementById("item").value)
+        function get_walaF(){
+            let route = '/users'
+            fetch(proxy + route).then((response) => response.json()).then((data) => console.log(data));
+        }
+        function myFunction(e){ 
+            // console.log(e.target.value);
+            // console.log(typeof obj);
+            // const val = e.target.value;
+            
+            // document.getElementById("num1").value = obj[val];
+        }
+    </script>
+    </body>
+</html>
