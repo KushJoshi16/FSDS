@@ -20,3 +20,24 @@ You must write an algorithm that runs in O(log n) time.
 
 The original array was [1,2,3,4,5] rotated 3 times.
 '''
+
+def findMin(nums: list[int]) -> int:
+    l = 0
+    h = len(nums) - 1
+    if h == 0:
+        return nums[0]
+    if nums[h] > nums[0]: return nums[0]
+
+    while(l<h):
+        m = l + (h-l)//2
+        if nums[m] > nums[m+1]:
+            return nums[m+1]
+        
+        if nums[m-1] > nums[m]:
+            return nums[m]
+        
+        if nums[m] > nums[0]:
+            l = m+1
+        else:
+            h = m-1
+            

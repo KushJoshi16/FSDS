@@ -8,7 +8,7 @@ The elements from indices 0 to n - 1 (**inclusive**) of original should form the
 Return *an* m x n *2D array constructed according to the above procedure, or an empty 2D array if it is impossible*.
 '''
 
-def construct2DArray(original: List[int], m: int, n: int) -> List[List[int]]:
+def construct2DArray(original: list[int], m: int, n: int) -> list[list[int]]:
     if m*n != len(original):
         return []
     else:

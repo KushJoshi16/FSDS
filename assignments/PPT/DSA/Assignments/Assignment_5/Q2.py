@@ -3,3 +3,6 @@ You have n coins and you want to build a staircase with these coins. The stairca
 
 Given the integer n, return *the number of **complete rows** of the staircase you will build*.
 '''
+
+def arrangeCoins(n: int) -> int:
+    return int(-1 + sqrt(1+8*n))//2

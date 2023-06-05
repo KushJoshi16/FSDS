@@ -18,3 +18,9 @@ For nums1, nums1[1] = 2 is present at index 0 of nums2, whereas nums1[0] = 1 and
 
 For nums2, nums2[0] = 2 is present at index 1 of nums1, whereas nums2[1] = 4 and nums2[2] = 6 are not present in nums2. Therefore, answer[1] = [4,6].
 '''
+
+def findDifference(nums1: list[int], nums2: list[int]) -> list[list[int]]:
+    rl = []
+    rl.append(list({i for i in nums1 if i not in nums2}))
+    rl.append(list({i for i in nums2 if i not in nums1}))
+    return rl

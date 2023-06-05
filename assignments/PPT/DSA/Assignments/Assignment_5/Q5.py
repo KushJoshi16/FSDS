@@ -41,3 +41,14 @@ For arr1[2]=8 we have:
 
 **|8-8|=0 <= d=2**
 '''
+
+def findTheDistanceValue(arr1: list[int], arr2: list[int], d: int) -> int:
+    dv = 0
+    n = len(arr2)
+    arr2.sort()
+    for num in arr1:
+        i = bisect.bisect(arr2, num)
+        minDist = min(abs(arr2[i if i<n else n-1]-num),abs(arr2[(i-1) if i>0 else 0]-num))
+        if minDist>d:
+            dv += 1
+    return dv

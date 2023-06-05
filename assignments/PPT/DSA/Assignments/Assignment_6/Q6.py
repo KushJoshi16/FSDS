@@ -1,4 +1,3 @@
-import collections
 '''
 An integer array original is transformed into a **doubled** array changed by appending **twice the value** of every element in original, and then randomly **shuffling** the resulting array.
 
@@ -18,6 +17,7 @@ Given an array changed, return original *if* changed *is a **doubled** array. If
 
 Other original arrays could be [4,3,1] or [3,1,4].
 '''
+import collections
 
 def findOriginalArray(changed: list[int]) -> list[int]:
     cnt = collections.Counter(changed)

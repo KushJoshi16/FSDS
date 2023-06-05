@@ -11,3 +11,12 @@ You must write an algorithm that runs in O(n) time and uses only constant extra 
 
 [2,3]
 '''
+
+def findDuplicates(nums: list[int]) -> list[int]:
+    n = len(nums)
+    for i in range(n):
+        nums[(nums[i]-1)%n] += n
+    
+    rv = [(i+1) for i in range(n) if nums[i]>2*n]
+        
+    return rv
